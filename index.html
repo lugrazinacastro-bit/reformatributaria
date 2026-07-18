@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reforma Tributária - Atualizações em Tempo Real</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>📋 Reforma Tributária Brasileira</h1>
+                <p class="subtitle">Atualizações em Tempo Real - EC nº 132/2023 e LC nº 214/2025</p>
+                <div class="status-bar">
+                    <span class="live-indicator">🔴 AO VIVO</span>
+                    <span class="last-update" id="lastUpdate">Atualizando...</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <button class="nav-btn active" data-filter="todos">Todos</button>
+            <button class="nav-btn" data-filter="cronograma">Cronograma</button>
+            <button class="nav-btn" data-filter="mudancas">Mudanças Práticas</button>
+            <button class="nav-btn" data-filter="impactos">Impactos</button>
+            <button class="nav-btn" data-filter="tributos">Tributos</button>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main">
+            <!-- Summary Cards -->
+            <section class="summary-cards">
+                <div class="card card-info">
+                    <div class="card-icon">🎯</div>
+                    <div class="card-content">
+                        <h3>Modelo IVA Dual</h3>
+                        <p>CBS (Federal) + IBS (Estadual/Municipal)</p>
+                        <span class="badge">Alíquota: ~26,5% - 28%</span>
+                    </div>
+                </div>
+                <div class="card card-warning">
+                    <div class="card-icon">⏰</div>
+                    <div class="card-content">
+                        <h3>Próxima Etapa</h3>
+                        <p>2026: Fase de Testes (0,9% CBS + 0,1% IBS)</p>
+                        <span class="countdown" id="countdown"></span>
+                    </div>
+                </div>
+                <div class="card card-success">
+                    <div class="card-icon">✅</div>
+                    <div class="card-content">
+                        <h3>Tributos Extintos</h3>
+                        <p>PIS, COFINS, ICMS, ISS e IPI</p>
+                        <span class="badge">5 tributos substituídos</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cronograma Timeline -->
+            <section class="section">
+                <h2 class="section-title">📅 Cronograma de Transição (2026-2033)</h2>
+                <div class="timeline">
+                    <div class="timeline-item timeline-item-2026">
+                        <div class="timeline-marker">2026</div>
+                        <div class="timeline-content">
+                            <h4>Fase de Testes</h4>
+                            <p>Alíquota simbólica de 0,9% (CBS) + 0,1% (IBS) destacada nas notas fiscais. Simples Nacional adaptado.</p>
+                            <span class="badge-timeline">🔄 Em Progresso</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">2027</div>
+                        <div class="timeline-content">
+                            <h4>CBS em Vigor Pleno</h4>
+                            <p>PIS e COFINS extintos. CBS com alíquota cheia (~8,8%). IPI reduzido a zero.</p>
+                            <span class="badge-timeline">⏳ Próximo</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">2029-2032</div>
+                        <div class="timeline-content">
+                            <h4>Transição do IBS</h4>
+                            <p>Extinção gradual do ICMS e ISS. IBS em fase de transição.</p>
+                            <span class="badge-timeline">📋 Planejado</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">2033</div>
+                        <div class="timeline-content">
+                            <h4>Implementação Completa</h4>
+                            <p>Novo modelo totalmente implementado. Fim definitivo do sistema atual.</p>
+                            <span class="badge-timeline">🎯 Final</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- News Feed -->
+            <section class="section">
+                <h2 class="section-title">📰 Notícias e Atualizações</h2>
+                <div class="news-feed" id="newsFeed">
+                    <div class="loading">⏳ Carregando atualizações...</div>
+                </div>
+            </section>
+
+            <!-- Key Information -->
+            <section class="section">
+                <h2 class="section-title">🔑 Informações Essenciais</h2>
+                <div class="info-grid">
+                    <div class="info-box">
+                        <h3>O que Muda em 2026</h3>
+                        <ul>
+                            <li>✓ Destaque de IBS e CBS nas notas fiscais</li>
+                            <li>✓ Valores não compõem o total da operação</li>
+                            <li>✓ Adequação de sistemas fiscais eletrônicos</li>
+                            <li>✓ Janeiro: início do destaque</li>
+                            <li>✓ Julho/Agosto: novas etapas de adaptação</li>
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <h3>Impactos Esperados</h3>
+                        <ul>
+                            <li>✓ Simplificação do sistema tributário</li>
+                            <li>✓ Maior transparência para o consumidor</li>
+                            <li>✓ Fim da "guerra fiscal" entre estados</li>
+                            <li>✓ Estímulo à reindustrialização</li>
+                            <li>✓ Custos de conformidade no curto prazo</li>
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <h3>Tributos Extintos</h3>
+                        <ul>
+                            <li>📍 PIS - Programa de Integração Social</li>
+                            <li>📍 COFINS - Contribuição para Seguridade</li>
+                            <li>📍 ICMS - Circulação de Mercadorias</li>
+                            <li>📍 ISS - Imposto sobre Serviços</li>
+                            <li>📍 IPI - Imposto sobre Produtos (residual)</li>
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <h3>Novos Tributos</h3>
+                        <ul>
+                            <li>💼 CBS - Contribuição sobre Bens e Serviços (Federal)</li>
+                            <li>💼 IBS - Imposto sobre Bens e Serviços (Est/Mun)</li>
+                            <li>💼 IS - Imposto Seletivo (Federal)</li>
+                            <li>💼 Cashback tributário para baixa renda</li>
+                            <li>💼 Comitê Gestor do IBS</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features -->
+            <section class="section">
+                <h2 class="section-title">🌟 Características Principais</h2>
+                <div class="features">
+                    <div class="feature">
+                        <h4>🔄 Não Cumulatividade Plena</h4>
+                        <p>Cada etapa da cadeia produtiva gera crédito tributário real, eliminando o efeito cascata.</p>
+                    </div>
+                    <div class="feature">
+                        <h4>🎯 Cobrança no Destino</h4>
+                        <p>Imposto recolhido no local de consumo, não na origem. Fim da "guerra fiscal".</p>
+                    </div>
+                    <div class="feature">
+                        <h4>💰 Cashback Tributário</h4>
+                        <p>Devolução de parte dos tributos pagos por pessoas físicas de baixa renda.</p>
+                    </div>
+                    <div class="feature">
+                        <h4>🏛️ Comitê Gestor do IBS</h4>
+                        <p>Novo órgão responsável pela arrecadação e distribuição entre estados e municípios.</p>
+                    </div>
+                    <div class="feature">
+                        <h4>💳 Split Payment</h4>
+                        <p>Tributo recolhido automaticamente no pagamento, direto para os cofres públicos.</p>
+                    </div>
+                    <div class="feature">
+                        <h4>📊 Transparência</h4>
+                        <p>Consumidor vê claramente o valor do imposto pago em cada compra.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- References -->
+            <section class="section">
+                <h2 class="section-title">📚 Referências Oficiais</h2>
+                <div class="references">
+                    <a href="#" class="reference-btn">📄 Emenda Constitucional nº 132/2023</a>
+                    <a href="#" class="reference-btn">📋 Lei Complementar nº 214/2025</a>
+                    <a href="#" class="reference-btn">🏛️ Portal da Câmara dos Deputados</a>
+                    <a href="#" class="reference-btn">🏢 Receita Federal do Brasil</a>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>© 2026 Reforma Tributária Brasileira | Informações baseadas em EC nº 132/2023 e LC nº 214/2025</p>
+                <p class="footer-note">Esta página atualiza automaticamente a cada 5 minutos. Última atualização: <span id="footerUpdate">agora</span></p>
+                <p class="footer-social">
+                    <a href="https://github.com/lugrazinacastro-bit/reformatributaria" target="_blank">🔗 Repositório GitHub</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
