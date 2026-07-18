@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "title": "Fase de Testes 2026: Primeiras Orientações da Receita Federal",
+    "description": "A Receita Federal do Brasil divulgou as primeiras orientações técnicas para a fase de testes de 2026. Contribuintes que emitem documentos fiscais devem se preparar para o destaque do CBS e do IBS nas notas fiscais.",
+    "date": "2026-01-15",
+    "category": "cronograma",
+    "tags": ["Receita Federal", "2026", "Testes"]
+  },
+  {
+    "id": 2,
+    "title": "Simples Nacional: Adaptações para a Reforma Tributária",
+    "description": "Empresas enquadradas no Simples Nacional receberão diretrizes especiais de implementação. A alíquota será de 1% em 2026, com ajustes previstos para 2027.",
+    "date": "2026-01-10",
+    "category": "mudancas",
+    "tags": ["Simples Nacional", "Pequenas Empresas"]
+  },
+  {
+    "id": 3,
+    "title": "Comitê Gestor do IBS Divulga Cronograma de Implementação",
+    "description": "O novo Comitê Gestor do IBS apresentou um cronograma detalhado com responsabilidades de estados e municípios. Investimentos em infraestrutura fiscal foram estimados em R$ 2 bilhões.",
+    "date": "2026-01-08",
+    "category": "cronograma",
+    "tags": ["IBS", "Comitê Gestor", "Implementação"]
+  },
+  {
+    "id": 4,
+    "title": "Cashback Tributário: Como Funciona o Benefício para Baixa Renda",
+    "description": "Pessoas físicas de baixa renda começarão a receber devolução de parte dos tributos pagos. O sistema será integrado ao CPF e processado via Receita Federal.",
+    "date": "2026-01-05",
+    "category": "impactos",
+    "tags": ["Cashback", "Benefícios", "Baixa Renda"]
+  },
+  {
+    "id": 5,
+    "title": "Extinção de PIS e COFINS em 2027: Transição Completa para CBS",
+    "description": "Em 2027, PIS e COFINS serão completamente extintos. A Contribuição sobre Bens e Serviços (CBS) entrará em vigor com alíquota aproximada de 8,8%.",
+    "date": "2026-01-02",
+    "category": "tributos",
+    "tags": ["PIS", "COFINS", "CBS"]
+  },
+  {
+    "id": 6,
+    "title": "Impacto na Indústria: Reduções de Imposto sobre Produtos",
+    "description": "O IPI foi reduzido a zero para a maioria dos produtos industrializados. Especialistas apontam potencial de reindustrialização do Brasil.",
+    "date": "2025-12-28",
+    "category": "impactos",
+    "tags": ["IPI", "Indústria", "Reindustrialização"]
+  },
+  {
+    "id": 7,
+    "title": "Sistemas Fiscais: Fabricantes Lançam Atualizações",
+    "description": "Grandes fornecedores de sistemas fiscais (ERP, NF-e) anunciaram versões atualizadas para suportar CBS e IBS. Testes de integração já estão em andamento.",
+    "date": "2025-12-20",
+    "category": "mudancas",
+    "tags": ["Sistemas Fiscais", "NF-e", "Tecnologia"]
+  },
+  {
+    "id": 8,
+    "title": "Fim da 'Guerra Fiscal': Cobrança no Destino a partir de 2026",
+    "description": "Com a tributação no destino, estados perdem incentivos para atrair empresas com benefícios fiscais. Espera-se o fim da 'guerra fiscal' entre unidades federativas.",
+    "date": "2025-12-15",
+    "category": "impactos",
+    "tags": ["Guerra Fiscal", "Federalismo", "Tributação"]
+  }
+]
