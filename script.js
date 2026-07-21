@@ -16,12 +16,12 @@ const state = {
 
 document.addEventListener('DOMContentLoaded', () => {
     initializeApp();
-    setupEventListeners();
-    startAutoRefresh();
 });
 
-function initializeApp() {
-    fetchNews();
+async function initializeApp() {
+    await fetchNews(); // Aguarda o carregamento das notícias
+    setupEventListeners(); // Depois configura os listeners
+    startAutoRefresh();
     updateCountdown();
     updateTimestamps();
     setInterval(updateCountdown, 1000); // Atualiza countdown a cada segundo
@@ -35,6 +35,7 @@ function setupEventListeners() {
     // Botões de navegação
     document.querySelectorAll('.nav-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
+            e.preventDefault();
             document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
             e.target.classList.add('active');
             state.currentFilter = e.target.dataset.filter;
@@ -49,29 +50,39 @@ function setupEventListeners() {
 
 async function fetchNews() {
     const container = document.getElementById('newsFeed');
+    if (!container) return;
+    
     container.innerHTML = '<div class="loading">⏳ Carregando atualizações...</div>';
 
     try {
+        // Tenta carregar o arquivo news.json
         const res = await fetch(`news.json?t=${Date.now()}`);
-        if (!res.ok) throw new Error('Falha ao buscar news.json');
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
+
+        // Valida se é um array
+        if (!Array.isArray(data)) throw new Error('Formato inválido');
 
         state.news = data.map(item => ({
             ...item,
             timestamp: new Date(item.date)
         })).sort((a, b) => b.timestamp - a.timestamp);
 
+        console.log('✅ Notícias carregadas com sucesso:', state.news.length);
+
     } catch (err) {
-        console.error('Erro ao carregar notícias:', err);
-        // fallback: manter notícias atuais (se houver) ou mostrar mensagem
+        console.error('❌ Erro ao carregar notícias:', err);
+        
+        // Fallback: tenta usar um arquivo local ou dados alternativos
         if (!state.news || state.news.length === 0) {
-            container.innerHTML = '<div class="loading">Erro ao carregar notícias.</div>';
-            return;
+            container.innerHTML = '<div class="loading" style="color: #ef4444;">⚠️ Erro ao carregar notícias. Verifique se o arquivo news.json existe no mesmo diretório.</div>';
+            return false;
         }
     }
 
     renderNews();
     updateLastUpdate();
+    return true;
 }
 
 function filterNews() {
@@ -98,6 +109,11 @@ function renderNews() {
 function renderNewsItems(items) {
     const container = document.getElementById('newsFeed');
     
+    if (!items || items.length === 0) {
+        container.innerHTML = '<div class="loading">Nenhuma notícia encontrada.</div>';
+        return;
+    }
+
     container.innerHTML = items.map(item => `
         <div class="news-item ${item.category}">
             <div class="news-header">
@@ -259,6 +275,17 @@ function escapeHtml(text) {
 
 const style = document.createElement('style');
 style.textContent = `
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
     @keyframes slideInRight {
         from {
             opacity: 0;
@@ -308,4 +335,4 @@ if ('serviceWorker' in navigator && 'Notification' in window) {
 console.log('%cReforma Tributária - Página de Atualizações (fetch news.json)', 'color: #1e3a5f; font-size: 16px; font-weight: bold;');
 console.log('%cEC nº 132/2023 - LC nº 214/2025', 'color: #2563eb; font-size: 12px;');
 console.log('Auto-refresh habilitado: a cada 5 minutos');
-console.log('Total de notícias carregadas (inicial):', state.news.length);
+console.log('Notícias serão carregadas do arquivo news.json');
