@@ -30,20 +30,20 @@ A reforma promove a maior mudança estrutural do sistema tributário brasileiro 
 
 ## Cronograma de Transição (2026–2033)
 
-<cite index="2-1">O cronograma oficial prevê para 2026 o início da cobrança de teste, com 0,9% de CBS e 0,1% de IBS, enquanto PIS e COFINS seguem sem alteração, permitindo a compensação do valor pago no teste</cite>.
+O cronograma oficial prevê para 2026 o início da cobrança de teste, com 0,9% de CBS e 0,1% de IBS, enquanto PIS e COFINS seguem sem alteração, permitindo a compensação de créditos.
 
 | Ano | Etapa |
 |---|---|
-| **2026** | Fase de testes: alíquota simbólica de 0,9% (CBS) + 0,1% (IBS), destacada nas notas fiscais sem compor o valor da operação. <cite index="7-1">Empresas do Simples Nacional, incluindo MEIs, estão dispensadas dessas obrigações neste ano, passando a destacar IBS e CBS somente a partir de 2027</cite>. |
-| **2027** | <cite index="2-1">PIS e COFINS são definitivamente extintos e a CBS entra em vigor com sua alíquota cheia (cerca de 8,8%); o IPI é reduzido a zero para a maioria dos produtos</cite>, exceto os da Zona Franca de Manaus. O Imposto Seletivo também passa a ser cobrado. |
-| **2029–2032** | <cite index="6-1">O IBS entra em fase de transição gradual, com a extinção total do ICMS e do ISS prevista para 2033</cite>. |
+| **2026** | Fase de testes: alíquota simbólica de 0,9% (CBS) + 0,1% (IBS), destacada nas notas fiscais sem compor o valor da operação. Empresas do Simples Nacional começam adaptações. |
+| **2027** | PIS e COFINS são definitivamente extintos e a CBS entra em vigor com sua alíquota cheia (cerca de 8,8%); o IPI é reduzido a zero para a maioria dos produtos. |
+| **2029–2032** | O IBS entra em fase de transição gradual, com a extinção total do ICMS e do ISS prevista para 2033. |
 | **2033** | Implementação completa do novo modelo, com o fim definitivo do sistema atual de tributos sobre consumo. |
 
 > ⚠️ Durante boa parte da transição, os sistemas antigo e novo coexistirão, exigindo adaptação de empresas, contadores e desenvolvedores de sistemas fiscais.
 
 ## O que muda na prática (2026)
 
-<cite index="3-1">A partir de janeiro de 2026, contribuintes que já emitem documentos fiscais devem destacar o IBS e a CBS nas notas fiscais, sem que esses valores componham o total da operação, com caráter exclusivamente informativo</cite>. <cite index="3-1">Foi instituído também um período de dispensa de penalidades relacionadas às novas obrigações acessórias, válido até o primeiro dia do quarto mês após a publicação da parte comum dos regulamentos</cite>.
+A partir de janeiro de 2026, contribuintes que já emitem documentos fiscais devem destacar o IBS e a CBS nas notas fiscais, sem que esses valores componham o total da operação.
 
 Em julho e agosto de 2026, entram em vigor novas etapas de adaptação dos documentos fiscais eletrônicos, o que exige atenção de empresas, escritórios contábeis e desenvolvedores de sistemas.
 
@@ -55,15 +55,41 @@ Em julho e agosto de 2026, entram em vigor novas etapas de adaptação dos docum
 - **Reindustrialização**: segundo relatores da reforma, o novo sistema busca favorecer a produção nacional.
 - **Custos de conformidade no curto prazo**: empresas e escritórios contábeis precisam investir em atualização de sistemas, cadastros e capacitação de equipes durante a transição.
 
+## Notícias e Atualizações
+
+Acompanhe as últimas notícias, regulamentações e atualizações sobre a Reforma Tributária:
+
+### Fontes Oficiais
+- 📜 [Emenda Constitucional nº 132/2023](https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm) - Texto oficial no Planalto
+- 📋 [Lei Complementar nº 214/2025](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm) - Regulamentação oficial
+- 🏛️ [Câmara dos Deputados - Cobertura sobre a Reforma Tributária](https://www2.camara.leg.br) - Acompanhamento legislativo
+- 🔗 [Comitê Gestor do IBS](https://www.ibs.org.br) - Diretrizes e informações oficiais
+- 📊 [Receita Federal do Brasil - Reforma Tributária](https://www.gov.br/receitafederal) - Orientações da fase de transição
+
+### Notícias Recentes
+- 📰 [Migalhas - Reforma Tributária](https://www.migalhas.com.br) - Cobertura jurídica especializada
+- 📰 [CNI - Confederação Nacional da Indústria](https://www.portaldaindustria.com.br) - Impacto na indústria
+- 📰 [CNDL - Câmara Nacional de Dirigentes Lojistas](https://www.cndl.org.br) - Impacto no comércio
+- 📰 [ABNT - Associação Brasileira de Normas Técnicas](https://www.abnt.org.br) - Normalização e certificação
+
+### Cronograma Importante
+- 🗓️ **Janeiro/2026**: Início da fase de testes (alíquotas simbólicas)
+- 🗓️ **Julho-Agosto/2026**: Adaptações nos documentos fiscais eletrônicos
+- 🗓️ **Janeiro/2027**: Extinção de PIS/COFINS e vigor pleno da CBS
+- 🗓️ **2029-2033**: Transição gradual do IBS com extinção de ICMS e ISS
+
 ## Glossário Rápido
 
 - **IVA Dual**: modelo com dois impostos sobre valor agregado (um federal — CBS, outro subnacional — IBS) operando de forma harmonizada.
 - **Alíquota-teste**: alíquota simbólica cobrada em 2026 para calibrar os sistemas antes da vigência plena.
 - **Split payment**: mecanismo em que o tributo é recolhido automaticamente no momento do pagamento, diretamente para os cofres públicos.
+- **Não cumulatividade**: sistema que permite aproveitar créditos de impostos pagos nas etapas anteriores da cadeia produtiva.
+- **Destinação**: local onde o bem ou serviço será efetivamente consumido.
 
-## Fontes e Leitura Complementar
+## Como Usar Este Repositório
 
-- Emenda Constitucional nº 132/2023
-- Lei Complementar nº 214/2025
-- Portal da Câmara dos Deputados — cobertura sobre a Reforma Tributária
-- Comitê Gestor do IBS e Receita Federal do Brasil — diretrizes da fase de transição
+Este guia é um recurso educativo para ajudar contribuintes, empresas, contadores e desenvolvedores a compreender as mudanças trazidas pela Reforma Tributária. Para informações oficiais, sempre consulte os links nas seções acima.
+
+---
+
+**Última atualização**: 21 de julho de 2026
