@@ -2,8 +2,8 @@
   {
     "id": 1,
     "title": "Fase de Testes 2026: Primeiras Orientações da Receita Federal",
-    "description": "A Receita Federal do Brasil divulgou as primeiras orientações técnicas para a fase de testes de 2026. Contribuintes que emitem documentos fiscais devem se preparar para o destaque do CBS e do IBS nas notas fiscais.",
-    "url": "https://www.gov.br/receitafederal/pt-br",
+    "description": "A Receita Federal divulgou orientações técnicas para a fase de testes de 2026, com destaque informativo de CBS e IBS nas notas fiscais e caráter educativo das regras.",
+    "url": "https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/acoes-e-programas/programas-e-atividades/reforma-tributaria-do-consumo/orientacoes-2026",
     "date": "2026-01-15",
     "category": "cronograma",
     "tags": ["Receita Federal", "2026", "Testes"]
@@ -11,8 +11,8 @@
   {
     "id": 2,
     "title": "Simples Nacional: Adaptações para a Reforma Tributária",
-    "description": "Empresas enquadradas no Simples Nacional receberão diretrizes especiais de implementação. A alíquota será de 1% em 2026, com ajustes previstos para 2027.",
-    "url": "https://www8.receita.fazenda.gov.br/SimplesNacional/",
+    "description": "Diretrizes para empresas do Simples Nacional sobre opções de recolhimento da CBS/IBS e o período de adaptação previsto pela Receita.",
+    "url": "https://www8.receita.fazenda.gov.br/SimplesNacional/Noticias/NoticiaCompleta.aspx?id=c739e03c-8482-473f-8e82-f38ec3b13637",
     "date": "2026-01-10",
     "category": "mudancas",
     "tags": ["Simples Nacional", "Pequenas Empresas"]
@@ -20,8 +20,8 @@
   {
     "id": 3,
     "title": "Comitê Gestor do IBS Divulga Cronograma de Implementação",
-    "description": "O novo Comitê Gestor do IBS apresentou um cronograma detalhado com responsabilidades de estados e municípios. Investimentos em infraestrutura fiscal foram estimados em R$ 2 bilhões.",
-    "url": "https://www.gov.br/economia/pt-br",
+    "description": "O Comitê Gestor do IBS publicou cronograma e detalhes do projeto-piloto e das fases de transição entre 2026 e 2033.",
+    "url": "https://cgibs.gov.br/comite-gestor-e-receita-federal-garantem-prazo-de-adaptacao-e-transicao-segura-para-contribuintes-do-ibs-e-da-cbs-em-2026",
     "date": "2026-01-08",
     "category": "cronograma",
     "tags": ["IBS", "Comitê Gestor", "Implementação"]
@@ -29,8 +29,8 @@
   {
     "id": 4,
     "title": "Cashback Tributário: Como Funciona o Benefício para Baixa Renda",
-    "description": "Pessoas físicas de baixa renda começarão a receber devolução de parte dos tributos pagos. O sistema será integrado ao CPF e processado via Receita Federal.",
-    "url": "https://www.gov.br/cidadania/pt-br",
+    "description": "Informações sobre a restituição automática (cashback) destinada a pessoas de baixa renda, paga via Pix com chave CPF e gerada pela Receita Federal.",
+    "url": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/julho/informacoes-sobre-a-restituicao-automatica-cashback",
     "date": "2026-01-05",
     "category": "impactos",
     "tags": ["Cashback", "Benefícios", "Baixa Renda"]
@@ -38,8 +38,8 @@
   {
     "id": 5,
     "title": "Extinção de PIS e COFINS em 2027: Transição Completa para CBS",
-    "description": "Em 2027, PIS e COFINS serão completamente extintos. A Contribuição sobre Bens e Serviços (CBS) entrará em vigor com alíquota aproximada de 8,8%.",
-    "url": "https://www.gov.br/economia/pt-br",
+    "description": "Documentos oficiais detalham a transição do PIS/COFINS para a CBS e as orientações para contribuintes durante o período de adaptação.",
+    "url": "http://sped.rfb.gov.br/arquivo/download/8016",
     "date": "2026-01-02",
     "category": "tributos",
     "tags": ["PIS", "COFINS", "CBS"]
@@ -47,8 +47,8 @@
   {
     "id": 6,
     "title": "Impacto na Indústria: Reduções de Imposto sobre Produtos",
-    "description": "O IPI foi reduzido a zero para a maioria dos produtos industrializados. Especialistas apontam potencial de reindustrialização do Brasil.",
-    "url": "https://www.gov.br/economia/pt-br",
+    "description": "Medidas de redução do IPI para diversos produtos industrializados e seus efeitos esperados na competitividade do setor.",
+    "url": "https://www.gov.br/gestao/pt-br/acesso-a-informacao/acoes-e-programas/principais-acoes-na-area-economica/acoes-2022/novo-decreto-do-ipi-traz-seguranca-juridica-ao-setor-produtivo",
     "date": "2025-12-28",
     "category": "impactos",
     "tags": ["IPI", "Indústria", "Reindustrialização"]
@@ -56,7 +56,7 @@
   {
     "id": 7,
     "title": "Sistemas Fiscais: Fabricantes Lançam Atualizações",
-    "description": "Grandes fornecedores de sistemas fiscais (ERP, NF-e) anunciaram versões atualizadas para suportar CBS e IBS. Testes de integração já estão em andamento.",
+    "description": "Fornecedores de sistemas fiscais anunciam versões e atualizações para adequação aos novos leiautes e requisitos de CBS/IBS.",
     "url": "https://www.gov.br/nfp/pt-br",
     "date": "2025-12-20",
     "category": "mudancas",
@@ -65,8 +65,8 @@
   {
     "id": 8,
     "title": "Fim da 'Guerra Fiscal': Cobrança no Destino a partir de 2026",
-    "description": "Com a tributação no destino, estados perdem incentivos para atrair empresas com benefícios fiscais. Espera-se o fim da 'guerra fiscal' entre unidades federativas.",
-    "url": "https://www.gov.br/economia/pt-br",
+    "description": "Informativos e hotsites oficiais explicam a lógica da tributação no destino e o fim da guerra fiscal com a implementação do novo modelo.",
+    "url": "https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/acoes-e-programas/programas-e-atividades/reforma-tributaria-do-consumo/faq",
     "date": "2025-12-15",
     "category": "impactos",
     "tags": ["Guerra Fiscal", "Federalismo", "Tributação"]
