@@ -6,8 +6,13 @@
 let state = {
     currentFilter: 'todos',
     news: [],
-    autoRefreshInterval: null
+    autoRefreshInterval: null,
+    lastETag: null,
+    lastModified: null,
+    lastHash: null
 };
+
+const REFRESH_INTERVAL = 60000; // 60s
 
 // ============================================
 // INICIALIZAÇÃO
@@ -22,14 +27,11 @@ async function initializeApp() {
     console.log('📋 Carregando notícias...');
     
     // Carrega as notícias
-    await fetchNews();
+    await fetchNews(true);
     
     // Configura listeners após notícias carregarem
-    if (state.news && state.news.length > 0) {
-        setupEventListeners();
-        console.log('✅ Event listeners configurados');
-    }
-    
+    setupEventListeners();
+
     // Inicia funcionalidades
     startAutoRefresh();
     updateCountdown();
@@ -44,25 +46,56 @@ async function initializeApp() {
 // CARREGAMENTO DE NOTÍCIAS
 // ============================================
 
-async function fetchNews() {
+function computeHash(str) {
+    // djb2
+    let hash = 5381;
+    for (let i = 0; i < str.length; i++) {
+        hash = ((hash << 5) + hash) + str.charCodeAt(i);
+        hash = hash & hash; // Convert to 32bit integer
+    }
+    return (hash >>> 0).toString(16);
+}
+
+async function fetchNews(force = false) {
     const container = document.getElementById('newsFeed');
     
     try {
-        // Mostra loading
-        container.innerHTML = '<div class="loading">⏳ Carregando atualizações...</div>';
+        // Mostra loading (only if forced or first load)
+        if (force) container.innerHTML = '<div class="loading">⏳ Carregando atualizações...</div>';
         
-        // Fetch com cache-busting
-        const response = await fetch('news.json?t=' + Date.now());
+        const headers = {};
+        if (state.lastETag) headers['If-None-Match'] = state.lastETag;
+        if (state.lastModified) headers['If-Modified-Since'] = state.lastModified;
         
-        // Log de status para debug
+        const response = await fetch('news.json?t=' + Date.now(), { headers });
         console.log('fetch news.json status:', response.status, response.statusText);
+        
+        if (response.status === 304) {
+            console.log('🔁 news.json não modificado (304)');
+            updateLastUpdate();
+            return false; // no change
+        }
         
         if (!response.ok) {
             throw new Error('Erro na requisição: ' + response.status);
         }
         
-        // Tenta parsear JSON, mas captura o texto bruto em caso de erro
+        // capture headers for future conditional requests
+        const etag = response.headers.get('ETag');
+        const lastMod = response.headers.get('Last-Modified');
+        if (etag) state.lastETag = etag;
+        if (lastMod) state.lastModified = lastMod;
+        
         const text = await response.text();
+
+        // Quick hash compare to avoid unnecessary re-render
+        const newHash = computeHash(text);
+        if (!force && state.lastHash && newHash === state.lastHash) {
+            console.log('🔁 Conteúdo igual ao anterior — nenhuma atualização necessária');
+            updateLastUpdate();
+            return false;
+        }
+
         let data;
         try {
             data = JSON.parse(text);
@@ -82,9 +115,12 @@ async function fetchNews() {
             timestamp: new Date(item.date)
         })).sort((a, b) => b.timestamp - a.timestamp);
         
+        // store hash after successful parse
+        state.lastHash = newHash;
+        
         console.log('✅ Notícias carregadas:', state.news.length);
         
-        // Renderiza notícias
+        // Renderiza notícias somente se houve mudança
         renderNews();
         updateLastUpdate();
         
@@ -92,12 +128,14 @@ async function fetchNews() {
         
     } catch (error) {
         console.error('❌ Erro ao carregar notícias:', error);
-        container.innerHTML = `
-            <div class="loading" style="color: #ef4444;">
-                ⚠️ Erro ao carregar notícias<br>
-                <small>${escapeHtml(error.message)}</small>
-            </div>
-        `;
+        if (container) {
+            container.innerHTML = `
+                <div class="loading" style="color: #ef4444;">
+                    ⚠️ Erro ao carregar notícias<br>
+                    <small>${escapeHtml(error.message)}</small>
+                </div>
+            `;
+        }
         return false;
     }
 }
@@ -111,7 +149,6 @@ function setupEventListeners() {
     
     if (navBtns.length === 0) {
         console.warn('⚠️ Nenhum botão de navegação encontrado');
-        return;
     }
     
     navBtns.forEach(btn => {
@@ -131,8 +168,23 @@ function setupEventListeners() {
             filterNews();
         });
     });
+
+    // Manual refresh button
+    const refreshBtn = document.getElementById('refreshNow');
+    if (refreshBtn) {
+        refreshBtn.addEventListener('click', async function (e) {
+            e.preventDefault();
+            refreshBtn.disabled = true;
+            refreshBtn.textContent = 'Atualizando...';
+            await fetchNews(true);
+            setTimeout(() => {
+                refreshBtn.disabled = false;
+                refreshBtn.textContent = 'Atualizar agora';
+            }, 1000);
+        });
+    }
     
-    console.log('🎯 ' + navBtns.length + ' botões de navegação configurados');
+    console.log('🎯 Event listeners configurados');
 }
 
 // ============================================
@@ -304,11 +356,11 @@ function startAutoRefresh() {
         clearInterval(state.autoRefreshInterval);
     }
     
-    state.autoRefreshInterval = setInterval(() => {
+    state.autoRefreshInterval = setInterval(async () => {
         console.log('🔄 Atualizando notícias...');
-        fetchNews();
-        showNotification('📰 Notícias atualizadas!');
-    }, 300000); // 5 minutos
+        const changed = await fetchNews();
+        if (changed) showNotification('📰 Notícias atualizadas!');
+    }, REFRESH_INTERVAL);
 }
 
 function showNotification(message) {
@@ -402,6 +454,18 @@ styles.textContent = `
         padding-top: 15px;
         border-top: 1px solid #e2e8f0;
     }
+    
+    .refresh-btn {
+        margin-left: 12px;
+        padding: 6px 12px;
+        background: #059669;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 600;
+    }
+    .refresh-btn:disabled { opacity: 0.6; cursor: default; }
     
     @keyframes slideIn {
         from {
