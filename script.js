@@ -54,14 +54,26 @@ async function fetchNews() {
         // Fetch com cache-busting
         const response = await fetch('news.json?t=' + Date.now());
         
+        // Log de status para debug
+        console.log('fetch news.json status:', response.status, response.statusText);
+        
         if (!response.ok) {
             throw new Error('Erro na requisição: ' + response.status);
         }
         
-        const data = await response.json();
+        // Tenta parsear JSON, mas captura o texto bruto em caso de erro
+        const text = await response.text();
+        let data;
+        try {
+            data = JSON.parse(text);
+        } catch (parseError) {
+            console.error('Erro ao parsear news.json:', parseError);
+            console.error('Corpo retornado:', text);
+            throw new Error('Erro ao interpretar news.json (ver console)');
+        }
         
         if (!Array.isArray(data)) {
-            throw new Error('Formato de dados inválido');
+            throw new Error('Formato de dados inválido: esperado um array');
         }
         
         // Processa dados
@@ -83,7 +95,7 @@ async function fetchNews() {
         container.innerHTML = `
             <div class="loading" style="color: #ef4444;">
                 ⚠️ Erro ao carregar notícias<br>
-                <small>${error.message}</small>
+                <small>${escapeHtml(error.message)}</small>
             </div>
         `;
         return false;
@@ -157,42 +169,62 @@ function renderNews() {
 }
 
 function renderNewsItems(items) {
-    const container = document.getElementById('newsFeed');
-    
-    if (!items || items.length === 0) {
-        container.innerHTML = '<div class="loading">Nenhuma notícia encontrada</div>';
-        return;
-    }
-    
-    const html = items.map((item, index) => `
-        <div class="news-item ${item.category}" style="animation-delay: ${index * 0.05}s">
-            <div class="news-header">
-                <div>
-                    <h3>${escapeHtml(item.title)}</h3>
-                    <span class="news-date">${formatDate(item.date)}</span>
+    try {
+        const container = document.getElementById('newsFeed');
+
+        if (!items || items.length === 0) {
+            container.innerHTML = '<div class="loading">Nenhuma notícia encontrada</div>';
+            return;
+        }
+
+        const html = items.map((item, index) => {
+            const safeTitle = escapeHtml(item.title || 'Sem título');
+            const safeDesc = escapeHtml(item.description || '');
+            const safeDate = formatDate(item.date || (item.timestamp ? item.timestamp.toISOString() : new Date().toISOString()));
+            const tags = Array.isArray(item.tags) ? item.tags : [];
+            const tagsHtml = tags.map(tag => `<span class="tag">${escapeHtml(tag)}</span>`).join('');
+            const href = item.url ? escapeHtml(item.url) : '#';
+
+            // Se não há url, não mostrar o link clicável
+            const linkHtml = item.url
+                ? `<a href="${href}" target="_blank" rel="noopener noreferrer" class="news-link">Leia a matéria completa →</a>`
+                : `<span class="news-link disabled" style="opacity:0.7;pointer-events:none;background:#94a3b8;">Fonte não disponível</span>`;
+
+            return `
+                <div class="news-item ${escapeHtml(item.category || '')}" style="animation-delay: ${index * 0.05}s">
+                    <div class="news-header">
+                        <div>
+                            <h3>${safeTitle}</h3>
+                            <span class="news-date">${safeDate}</span>
+                        </div>
+                    </div>
+
+                    <p class="news-description">${safeDesc}</p>
+
+                    <div class="news-tags">
+                        ${tagsHtml}
+                    </div>
+
+                    <div class="news-footer">
+                        ${linkHtml}
+                    </div>
                 </div>
-            </div>
-            
-            <p class="news-description">${escapeHtml(item.description || '')}</p>
-            
-            <div class="news-tags">
-                ${item.tags.map(tag => `<span class="tag">${escapeHtml(tag)}</span>`).join('')}
-            </div>
-            
-            <div class="news-footer">
-                <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="news-link">
-                    Leia a matéria completa →
-                </a>
-            </div>
-        </div>
-    `).join('');
-    
-    container.innerHTML = html;
-    
-    // Adiciona animation
-    container.querySelectorAll('.news-item').forEach(item => {
-        item.classList.add('fadeIn');
-    });
+            `;
+        }).join('');
+
+        container.innerHTML = html;
+
+        // Adiciona animation
+        container.querySelectorAll('.news-item').forEach(item => {
+            item.classList.add('fadeIn');
+        });
+    } catch (err) {
+        console.error('Erro durante renderização das notícias:', err);
+        const container = document.getElementById('newsFeed');
+        if (container) {
+            container.innerHTML = `<div class="loading" style="color:#ef4444;">Erro ao renderizar notícias (ver console)</div>`;
+        }
+    }
 }
 
 // ============================================
