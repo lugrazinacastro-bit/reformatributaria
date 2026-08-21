@@ -1,5 +1,50 @@
 [
   {
+    "id": 9,
+    "title": "Marco de 3 de Agosto: CBS e IBS Obrigatórios em Notas Fiscais",
+    "description": "A partir de 3 de agosto de 2026, tornou-se obrigatória a inclusão das informações de CBS e IBS nos documentos fiscais eletrônicos (NF-e, NFC-e e CT-e) para empresas sob regime normal. Ausência dos campos pode rejeitar a nota fiscal.",
+    "url": "https://www.contadores.cnt.br/noticias/artigos/2026/07/31/reforma-tributaria-a-partir-de-3-de-agosto-notas-fiscais-sem-ibs-e-cbs-poderao-ser-rejeitadas.html",
+    "date": "2026-08-03",
+    "category": "cronograma",
+    "tags": ["CBS", "IBS", "Notas Fiscais", "Obrigatoriedade"]
+  },
+  {
+    "id": 10,
+    "title": "Agosto de 2026: Nova Etapa para Documentos Fiscais Eletrônicos",
+    "description": "Agosto marca uma nova etapa operacional da reforma tributária. Empresas devem adequar sistemas e processos internos para evitar rejeição de notas fiscais e futuras autuações. Fase de testes com alíquota de 1%.",
+    "url": "https://www.totvs.com/blog/fiscal-clientes/reforma-tributaria-agosto-de-2026-marca-uma-nova-etapa-para-os-documentos-fiscais-eletronicos/",
+    "date": "2026-08-05",
+    "category": "mudancas",
+    "tags": ["Sistemas Fiscais", "Adaptação", "Operacional"]
+  },
+  {
+    "id": 11,
+    "title": "IBS e CBS: Entenda os Novos Tributos da Reforma Tributária",
+    "description": "Explicação detalhada sobre o funcionamento dos novos tributos (CBS e IBS), substituindo gradualmente PIS, Cofins, IPI, ICMS e ISS. Alíquota-teste de 1% (0,9% CBS + 0,1% IBS) em 2026 sem cobrança efetiva.",
+    "url": "https://www.contadores.cnt.br/noticias/tecnicas/2026/08/05/ibs-e-cbs-entenda-os-novos-tributos-que-chegam-com-a-reforma-tributaria.html",
+    "date": "2026-08-05",
+    "category": "tributos",
+    "tags": ["CBS", "IBS", "Explicativo", "Alíquotas"]
+  },
+  {
+    "id": 12,
+    "title": "Fase de Testes: Sanções Diferidas para Não-Conformidade",
+    "description": "Durante 2026, não há cobrança efetiva de CBS/IBS desde que as empresas preencham corretamente as notas. Falta de conformidade resulta em prazo de 60 dias para regularização antes de sanções severas em 2027.",
+    "url": "https://www.contabeis.com.br/artigos/78019/reforma-tributaria-ibs-e-cbs-em-julho-agosto-de-2026/",
+    "date": "2026-08-04",
+    "category": "impactos",
+    "tags": ["Sanções", "Conformidade", "Prazos"]
+  },
+  {
+    "id": 13,
+    "title": "Simples Nacional: Adaptações Necessárias Antes da Implementação",
+    "description": "Empresas do Simples Nacional já devem iniciar adaptações internas, rever processos, contratos e parametrização fiscal para participar nas fases posteriores da reforma tributária.",
+    "url": "https://www8.receita.fazenda.gov.br/SimplesNacional/Noticias/NoticiaCompleta.aspx?id=c739e03c-8482-473f-8e82-f38ec3b13637",
+    "date": "2026-08-02",
+    "category": "mudancas",
+    "tags": ["Simples Nacional", "Pequenas Empresas", "Adaptação"]
+  },
+  {
     "id": 1,
     "title": "Fase de Testes 2026: Primeiras Orientações da Receita Federal",
     "description": "A Receita Federal divulgou orientações técnicas para a fase de testes de 2026, com destaque informativo de CBS e IBS nas notas fiscais e caráter educativo das regras.",
