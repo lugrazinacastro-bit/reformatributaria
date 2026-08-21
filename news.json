@@ -1,5 +1,32 @@
 [
   {
+    "id": 14,
+    "title": "Split Payment: O Novo Mecanismo de Arrecadação da Reforma Tributária",
+    "description": "Split Payment é o novo modelo de pagamento onde o imposto (CBS e IBS) é automaticamente separado no ato do pagamento. O sistema bancário repassa o valor diretamente ao Fisco e a empresa recebe o valor líquido. Começa em testes em 2026 e é obrigatório a partir de 2027.",
+    "url": "https://thiagobicalho.adv.br/split-payment-reforma-tributaria-2026.html",
+    "date": "2026-08-20",
+    "category": "mudancas",
+    "tags": ["Split Payment", "Arrecadação", "Fluxo de Caixa", "Sistemas Integrados"]
+  },
+  {
+    "id": 15,
+    "title": "Novas Declarações Obrigatórias: DeRE e Documentos Fiscais Eletrônicos",
+    "description": "A partir de 2026, empresas devem emitir documentos fiscais eletrônicos destacando CBS e IBS. Novos documentos como NF-ABI e NFAg são implementados. Pessoas físicas contribuintes deverão se inscrever no CNPJ a partir de julho de 2026.",
+    "url": "https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/acoes-e-programas/programas-e-atividades/reforma-tributaria-do-consumo/orientacoes-2026",
+    "date": "2026-08-18",
+    "category": "cronograma",
+    "tags": ["Declarações", "Documentos Fiscais", "DeRE", "Obrigações", "CNPJ"]
+  },
+  {
+    "id": 16,
+    "title": "Reforma Tributária nas Importações: CBS e IBS com Alíquotas-Teste",
+    "description": "A partir de 01/01/2026, importações estão sujeitas a CBS (0,9%) e IBS (0,1%) em fase de testes. Não há recolhimento efetivo em 2026, mas destaque obrigatório nas notas fiscais. Tributação no destino garante isonomia com produtos nacionais.",
+    "url": "https://garbari.com/reforma-tributaria-2026-ibs-cbs-importacao/",
+    "date": "2026-08-15",
+    "category": "impactos",
+    "tags": ["Importações", "CBS", "IBS", "Tributação no Destino", "DUIMP"]
+  },
+  {
     "id": 9,
     "title": "Marco de 3 de Agosto: CBS e IBS Obrigatórios em Notas Fiscais",
     "description": "A partir de 3 de agosto de 2026, tornou-se obrigatória a inclusão das informações de CBS e IBS nos documentos fiscais eletrônicos (NF-e, NFC-e e CT-e) para empresas sob regime normal. Ausência dos campos pode rejeitar a nota fiscal.",
